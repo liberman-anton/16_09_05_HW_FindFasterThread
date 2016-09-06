@@ -5,7 +5,8 @@ import java.util.LinkedList;
 public class FindFasterThreadAppl {
 
 	private static final String DELIMETER = "/";
-	static volatile LinkedList<String> resalts = new LinkedList<>();
+	static /*volatile*/ LinkedList<String> resalts = new LinkedList<>();
+	static String winner = new String();
 
 	public static void main(String[] args) {
 		BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
@@ -23,7 +24,7 @@ public class FindFasterThreadAppl {
 		int maxTimeOfWaiting = Integer.parseInt(parameters[2]);
 		Thread[] threads = start(nThreads,nIterations,maxTimeOfWaiting);
 		joinThreads(threads);
-		System.out.println("Resalts: " + resalts);
+		System.out.println("Resalts: " + winner);//resalts);
 		
 	}
 

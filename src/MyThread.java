@@ -23,7 +23,8 @@ public class MyThread extends Thread {
 			}
 			System.out.println(name);			
 		}
-		FindFasterThreadAppl.resalts.add(name);
+		//FindFasterThreadAppl.resalts.add(name);
+		if(FindFasterThreadAppl.winner.equals(""))FindFasterThreadAppl.winner = name;
 		System.out.println(name + " is competed");
 	}
 }
